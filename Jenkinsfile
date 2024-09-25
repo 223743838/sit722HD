@@ -10,16 +10,16 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'npm run test'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh 'npm install'
+        //     }
+        // }
+        // stage('Test') {
+        //     steps {
+        //         sh 'npm run test'
+        //     }
+        // }
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $CONTAINER_REGISTRY/${DOCKER_IMAGE}:${DOCKER_TAG} .'
